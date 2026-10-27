@@ -18,9 +18,8 @@
 
 **oh-my-dd** is a CLI that plugs into the harness of AI coding agents (Claude Code, Codex CLI,
 Gemini CLI) right when a project starts. It gathers the project's context, helps decide which
-development methodology fits it best (Spec-Driven Development, Observability-Driven Development,
-or others) and installs that methodology as a workflow the agent can follow and the user can
-tailor.
+development methodology fits it best (Spec-Driven Development, Organic Driven Development, or
+others) and installs that methodology as a workflow the agent can follow and the user can tailor.
 
 oh-my-dd is an independent project: its methodologies are built from scratch, not on top of
 existing toolkits.
@@ -59,7 +58,8 @@ Integrations are built one at a time: each one must work end-to-end before the n
 
 ## 🧱 Design principles
 
-The full rules live in the [project constitution](./.specify/memory/constitution.md).
+The full rules are kept as project memory in [Engram](https://github.com/Gentleman-Programming/engram)
+and exported to [`.engram/`](./.engram/); import them with `engram sync --import`.
 
 | # | Principle | In one line |
 |---|---|---|
@@ -75,13 +75,13 @@ The full rules live in the [project constitution](./.specify/memory/constitution
 
 oh-my-dd is in its **design phase**: there is nothing to install yet.
 
-- [x] Project constitution (v1.1.0)
+- [x] Project principles (Engram project memory)
 - [x] Design of the `charter` stage ([docs/design/charter-phase.md](./docs/design/charter-phase.md))
 - [ ] Design of the SDD phases
 - [ ] CLI (Python, distributed with uv)
 - [ ] Claude Code integration
 - [ ] Methodology decision
-- [ ] Observability-Driven Development
+- [ ] Organic Driven Development
 - [ ] Codex CLI and Gemini CLI integrations
 
 ## 🗂️ Repository layout
@@ -89,19 +89,24 @@ oh-my-dd is in its **design phase**: there is nothing to install yet.
 ```
 .
 ├── docs/design/          → Design documents of oh-my-dd's stages and phases
-├── .specify/             → Development tooling (Spec Kit): constitution, templates
-├── .claude/skills/       → Development tooling (Spec Kit skills for Claude Code)
-└── LICENSE
+├── .engram/              → Project memory: principles and decisions (Engram export)
+├── .claude/, .mcp.json   → Development tooling (Gentle-AI, workspace scope)
+├── LICENSE
+└── README.md
 ```
 
-This repository is itself developed with Spec-Driven Development, using
-[GitHub Spec Kit](https://github.com/github/spec-kit) **as development tooling only**: oh-my-dd
-does not depend on it, and none of its files are shipped with the product.
+This repository is itself developed with Organic Driven Development, using
+[Gentle-AI](https://github.com/Gentleman-Programming/gentle-ai) **as development tooling only**:
+oh-my-dd does not depend on it, and none of its files are shipped with the product. Its
+methodologies, ODD included, are implemented from scratch.
 
 ## 🤝 Development
 
 - `staging` is the development branch; `main` receives changes through pull requests.
 - Everything in the repository is written in English.
+- Development environment: install [Gentle-AI](https://github.com/Gentleman-Programming/gentle-ai)
+  for this repository only (`gentle-ai sync --scope workspace`), then load the project memory
+  with `engram sync --import`.
 
 ## 📜 License
 

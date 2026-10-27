@@ -29,9 +29,10 @@ soon as it is completed, so an interrupted session can resume where it stopped.
 ## Interaction model
 
 - Interview: the agent asks, the user answers.
-- Every sub-phase follows Constitution Principle VII (User-Led Elicitation): ask first; suggest
-  only after the user answers and never insert suggestions without the user's decision; help
-  the user think before offering options; never mark an option as recommended. No exceptions.
+- Every sub-phase follows Principle VII (User-Led Elicitation, in the project's Engram memory):
+  ask first; suggest only after the user answers and never insert suggestions without the
+  user's decision; help the user think before offering options; never mark an option as
+  recommended. No exceptions.
 
 ## Sub-phases
 
