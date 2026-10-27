@@ -1,0 +1,16 @@
+# Claude Code: configuración y estado local (no compartir)
+.claude/settings.local.json
+.claude/**/*.local.*
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+
+# Variables de entorno
+.env
+.env.*
