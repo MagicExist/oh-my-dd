@@ -97,6 +97,34 @@ vertical slice validates the architecture before it is replicated.
 **Rationale**: the primary developer works on Windows while most agent tooling assumes Unix.
 Parity must be enforced explicitly or it silently erodes.
 
+### VII. User-Led Elicitation
+
+Applies to every stage and phase the product ships (oh-my-dd's own stages and every methodology
+phase), with no exceptions.
+
+- **Ask first**: the agent MUST open every elicitation step with a question. It MUST NOT open with
+  a proposal, a draft or an example answer.
+- **Suggest after, never insert**: once the user has answered, the agent MAY generate additional
+  suggestions, but it MUST NOT add them to the output on its own. It MUST present them as a
+  decision where the user can pick, modify or skip each suggestion, or skip all of them and keep
+  only their own answer.
+- **Help think before proposing**: if the user does not know the answer, the agent MUST first
+  help them think (rephrase the question, ask a more concrete one) before proposing anything.
+- **Options as a last resort**: only if the user still does not know MAY the agent offer options.
+  It MUST offer several, and it MUST NOT mark any of them as recommended.
+- **Neutrality**: for every suggestion or option, order MUST carry no preference; every option
+  MUST get the same level of detail, with pros and cons; evaluative adjectives (e.g. "simplest",
+  "ideal") are forbidden; the user MUST always be able to give their own answer instead.
+- **Invariant**: the output MUST only contain what the user wrote or explicitly accepted. The
+  skill evals required by Principle IV MUST check this invariant.
+- Topics users rarely articulate on demand (e.g. assumptions and risks) MUST still be elicited
+  through questions, such as a pre-mortem ("imagine the project failed: why?").
+
+**Rationale**: proposing first anchors the user (anchoring bias). Out of convenience, users
+accept the agent's suggestion and stay conditioned by it even when they try to think further;
+labeling one option as recommended has the same effect. The product exists to help users
+decide, not to decide for them.
+
 ## Technology & Distribution Constraints
 
 - **Language**: Python. The minimum supported Python version MUST be declared in
@@ -142,4 +170,4 @@ Parity must be enforced explicitly or it silently erodes.
 - **Compliance**: every plan's Constitution Check and every `/speckit-analyze` run verify
   compliance; violations of a MUST are CRITICAL. Reviews MUST confirm compliance before merge.
 
-**Version**: 1.0.0 | **Ratified**: 2026-10-27 | **Last Amended**: 2026-10-27
+**Version**: 1.1.0 | **Ratified**: 2026-10-27 | **Last Amended**: 2026-10-27
